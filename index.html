@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Firebase Chat Light</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+
+    </head>
+    <body>
+    <div id="app">
+    <h3>Firebase Chat <button id="btn_online" class="btn-success">Online Users</button></h3>
+ <marquee>Firebase Chat by Burey || Updates: | added toastr notifications | click on @{&lt;username&gt;} to quickly add it to the message body | added quick-access emojis (leave message/comment to request more) | code is best viewed on mobile | the cake is lie <sup>.</sup>_<sup>.</sup></marquee>
+    <button id="night_mode" style="display:none;">Night Mode</button>
+    <form id="chat_login" onsubmit="event.preventDefault();" autocomplete="on">
+    
+    <input id="input_username" placeholder="Username:" />
+    
+    <button id="btn_login" type="submit" class="btn-primary">Login to post</button>
+    
+    </form>
+    
+    <div id="chat">
+    <div id="post_container">
+        <input id="input_by" disabled="true" placeholder="By:"/>
+        
+        <button id="btn_logout" style="display:none;" class="btn-warning">Logout</button>
+        
+        <textarea id="input_body" placeholder="Message:"></textarea><br />
+        <div id="post_controls" style="display:none;">
+        <span>
+        <button id="btn_post" class="btn-success">Post Message</button>
+        <button id="btn_update" class="btn-success" style="display:none;">Update Message</button>
+        <span id="emoji_container"></span>
+       
+        </span>
+    </div>
+    </div>
+    <div id="messages_container">
+    <div id="messages"></div>
+    <div id="loader"></div>
+    </div>
+    </div>
+    </div>
+    <!--
+    required firebase script and
+    configuration
+    -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAqgUmllyQ0yFjpcvGcYlIOxdwwNtkIhYo",
+    authDomain: "crud-tutorial.firebaseapp.com",
+    databaseURL: "https://crud-tutorial.firebaseio.com",
+    projectId: "crud-tutorial",
+    storageBucket: "crud-tutorial.appspot.com",
+    messagingSenderId: "525842113891"
+  };
+  firebase.initializeApp(config);
+</script>
+    </body>
+</html>
